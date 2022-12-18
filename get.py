@@ -173,12 +173,12 @@ def parse(maya, platform_):
         if response.code == 200:
             url_list = parse_links(response.readlines())
         else:
-            _log("%s returned from: %d" % (response.code, SITE))
-            os._exit(1)
+            _log("%d returned from: %s" % (response.code, SITE))
+            sys.exit(1)
 
     except Exception as e:
         _log(str(e))
-        os._exit(1)
+        sys.exit(1)
 
     else:
         found = []
@@ -211,7 +211,7 @@ def main(maya, platform_, dryrun):
             "No link for Maya %s %s\n"
             "Can you find it there? %s" % (maya, platform_, SITE)
         )
-        os._exit(1)
+        sys.exit(1)
 
 
 if __name__ == "__main__":
@@ -229,8 +229,8 @@ if __name__ == "__main__":
                              "And 2020.* will get all.")
     parser.add_argument("--platform", default=platform.system(),
                         help="Default value is current platform: "
-                        "%s. Available options are: Windows, Linux, Mac."
-                        % platform.system())
+                             "%s. Available options are: Windows, Linux, Mac."
+                             % platform.system())
     parser.add_argument("--dryrun", default=False, action="store_true",
                         help="If set, only list out URLs.")
 
