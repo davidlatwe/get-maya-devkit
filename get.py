@@ -38,6 +38,10 @@ except ImportError:
     import urllib as request  # py2
 
 
+__author__ = "davidlatwe"
+__version__ = "0.1.0"
+
+
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
 
