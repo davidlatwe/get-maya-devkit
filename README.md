@@ -12,3 +12,9 @@ Download
 ```
 python ./get.py --maya 2022.3
 ```
+
+### TODO
+
+* Test on Linux and Mac
+* Rename downloaded dir "devkitBase" to platform name
+* Setup GitHub workflow
